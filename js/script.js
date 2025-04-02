@@ -133,6 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let slideCount = carousel.children.length;
     let autoplayInterval;
+    let isScrollSnapping = false;
+    let lastDragTime = 0;
+    let lastDragPosition = 0;
+    let dragVelocity = 0;
     
     // 获取当前轮播项的宽度（考虑间距）
     function getSlideWidth(carousel) {
@@ -183,10 +187,21 @@ document.addEventListener('DOMContentLoaded', function() {
       currentIndex = index;
       
       const scrollPosition = index * slideWidth;
+      
+      isScrollSnapping = true;
       carousel.scrollTo({
         left: scrollPosition,
         behavior: smooth ? 'smooth' : 'auto'
       });
+      
+      // 在平滑滚动结束后重置标志
+      if (smooth) {
+        setTimeout(() => {
+          isScrollSnapping = false;
+        }, 300); // 假设平滑滚动持续300ms
+      } else {
+        isScrollSnapping = false;
+      }
       
       updateDots();
     }
@@ -205,65 +220,106 @@ document.addEventListener('DOMContentLoaded', function() {
     let startPosition = 0;
     let startScrollLeft = 0;
     
-    carousel.addEventListener('mousedown', (e) => {
+    // 处理鼠标拖拽开始
+    function handleDragStart(e) {
+      if (isScrollSnapping) return;
+      
       isDragging = true;
-      startPosition = e.pageX;
+      startPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
       startScrollLeft = carousel.scrollLeft;
+      lastDragPosition = startPosition;
+      lastDragTime = Date.now();
+      dragVelocity = 0;
+      
       carousel.style.cursor = 'grabbing';
-    });
+      carousel.style.scrollBehavior = 'auto';
+      carousel.classList.add('dragging');
+      
+      // 阻止默认行为，避免在触摸设备上滚动页面
+      if (e.type.includes('touch')) {
+        e.preventDefault();
+      }
+    }
     
-    carousel.addEventListener('mousemove', (e) => {
+    // 处理拖拽移动
+    function handleDragMove(e) {
       if (!isDragging) return;
       
-      const distance = e.pageX - startPosition;
-      carousel.scrollLeft = startScrollLeft - distance;
-    });
+      const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+      const distance = currentPosition - startPosition;
+      
+      // 计算拖拽速度
+      const now = Date.now();
+      const timeElapsed = now - lastDragTime;
+      
+      if (timeElapsed > 0) {
+        // 计算每毫秒移动的像素数
+        dragVelocity = (currentPosition - lastDragPosition) / timeElapsed;
+      }
+      
+      lastDragPosition = currentPosition;
+      lastDragTime = now;
+      
+      // 应用阻尼效果，使拖动感觉更自然
+      const dampingFactor = 1; // 可以调整这个值来控制阻尼强度
+      const newScrollLeft = startScrollLeft - distance * dampingFactor;
+      
+      carousel.scrollLeft = newScrollLeft;
+      
+      // 防止页面滚动
+      e.preventDefault();
+    }
     
-    carousel.addEventListener('mouseup', () => {
+    // 处理拖拽结束
+    function handleDragEnd(e) {
+      if (!isDragging) return;
+      
       isDragging = false;
       carousel.style.cursor = 'grab';
+      carousel.classList.remove('dragging');
       
-      // 确定当前应该滚动到哪个幻灯片
-      const newIndex = Math.round(carousel.scrollLeft / slideWidth);
-      goToSlide(newIndex);
+      // 根据拖拽速度决定滑动方向和距离
+      const velocity = Math.abs(dragVelocity) > 0.5 ? dragVelocity : 0;
+      const momentumDistance = velocity * 300; // 速度越大，惯性滑动越远
+      
+      let targetIndex;
+      
+      if (Math.abs(velocity) > 0.3) {
+        // 高速拖拽时，根据方向决定下一张或上一张
+        const direction = velocity < 0 ? 1 : -1;
+        targetIndex = currentIndex + direction;
+      } else {
+        // 低速拖拽或点击时，根据当前位置计算最近的幻灯片
+        targetIndex = Math.round(carousel.scrollLeft / slideWidth);
+      }
+      
+      // 恢复平滑滚动
+      carousel.style.scrollBehavior = 'smooth';
+      goToSlide(targetIndex);
       resetAutoplay();
-    });
+    }
+    
+    // 鼠标事件
+    carousel.addEventListener('mousedown', handleDragStart);
+    window.addEventListener('mousemove', handleDragMove);
+    window.addEventListener('mouseup', handleDragEnd);
+    
+    // 触摸事件
+    carousel.addEventListener('touchstart', handleDragStart, {passive: false});
+    carousel.addEventListener('touchmove', handleDragMove, {passive: false});
+    carousel.addEventListener('touchend', handleDragEnd);
     
     carousel.addEventListener('mouseleave', () => {
       if (isDragging) {
         isDragging = false;
         carousel.style.cursor = 'grab';
+        carousel.classList.remove('dragging');
       }
     });
     
     // 防止拖拽时选中文本
     carousel.addEventListener('selectstart', (e) => {
       if (isDragging) e.preventDefault();
-    });
-    
-    // 添加触摸支持
-    carousel.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      startPosition = e.touches[0].pageX;
-      startScrollLeft = carousel.scrollLeft;
-    });
-    
-    carousel.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      
-      const distance = e.touches[0].pageX - startPosition;
-      carousel.scrollLeft = startScrollLeft - distance;
-      // 防止页面滚动
-      e.preventDefault();
-    });
-    
-    carousel.addEventListener('touchend', () => {
-      isDragging = false;
-      
-      // 确定当前应该滚动到哪个幻灯片
-      const newIndex = Math.round(carousel.scrollLeft / slideWidth);
-      goToSlide(newIndex);
-      resetAutoplay();
     });
     
     // 自动播放功能
@@ -284,11 +340,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     carousel.addEventListener('mouseleave', () => {
-      startAutoplay();
+      if (!isDragging) {
+        startAutoplay();
+      }
     });
     
     // 滚动事件，更新当前幻灯片索引
     carousel.addEventListener('scroll', () => {
+      if (isScrollSnapping) return;
+      
       const scrollPosition = carousel.scrollLeft;
       const newIndex = Math.round(scrollPosition / slideWidth);
       

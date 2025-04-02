@@ -1003,7 +1003,8 @@ footer {
 }
 
 /* 应用轮播样式优化 */
-.app-carousel {
+.app-carousel,
+.testimonial-carousel {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -1011,10 +1012,78 @@ footer {
   padding: 1rem 1rem 2rem 1rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* 为iOS设备提供流畅滚动 */
+  user-select: none; /* 防止拖动时选中文本 */
+  touch-action: pan-x; /* 仅允许水平方向的触摸滑动 */
 }
 
-.app-carousel::-webkit-scrollbar {
+.app-carousel::-webkit-scrollbar,
+.testimonial-carousel::-webkit-scrollbar {
   display: none;
+}
+
+/* 轮播拖动时的样式 */
+.app-carousel.dragging,
+.testimonial-carousel.dragging {
+  scroll-snap-type: none;
+  cursor: grabbing !important;
+  scroll-behavior: auto;
+}
+
+/* 确保卡片滑动对齐 */
+.app-carousel .app-card,
+.testimonial-carousel .testimonial-card {
+  scroll-snap-align: start;
+  transition: transform 0.2s ease;
+}
+
+/* 激活拖动状态时防止卡片悬停效果 */
+.app-carousel.dragging .app-card,
+.testimonial-carousel.dragging .testimonial-card {
+  pointer-events: none;
+  transform: scale(1) !important;
+}
+
+/* 优化触摸滑动响应 */
+@media (pointer: coarse) {
+  .app-carousel,
+  .testimonial-carousel {
+    scroll-snap-type: x mandatory;
+  }
+}
+
+/* 添加轮播侧边渐变指示 */
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to right, var(--background-gray), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to left, var(--background-gray), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 在深色模式下调整渐变颜色 */
+.dark-theme .carousel-container::before {
+  background: linear-gradient(to right, var(--dark-surface), transparent);
+}
+
+.dark-theme .carousel-container::after {
+  background: linear-gradient(to left, var(--dark-surface), transparent);
 }
 
 /* APP图标链接样式 */
