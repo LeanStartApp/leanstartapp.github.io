@@ -1,0 +1,23 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="8" fill="#F8F9FA"/>
+  
+  <!-- 人物1 -->
+  <circle cx="100" cy="100" r="40" fill="#4285F4"/>
+  <circle cx="100" cy="80" r="20" fill="#FFFFFF"/>
+  <path d="M60 160C60 138.909 77.9086 122 100 122C122.091 122 140 138.909 140 160V180H60V160Z" fill="#4285F4"/>
+  
+  <!-- 人物2 -->
+  <circle cx="200" cy="80" r="40" fill="#0F9D58"/>
+  <circle cx="200" cy="60" r="20" fill="#FFFFFF"/>
+  <path d="M160 140C160 118.909 177.909 102 200 102C222.091 102 240 118.909 240 140V160H160V140Z" fill="#0F9D58"/>
+  
+  <!-- 人物3 -->
+  <circle cx="300" cy="110" r="40" fill="#DB4437"/>
+  <circle cx="300" cy="90" r="20" fill="#FFFFFF"/>
+  <path d="M260 170C260 148.909 277.909 132 300 132C322.091 132 340 148.909 340 170V190H260V170Z" fill="#DB4437"/>
+  
+  <!-- 装饰元素 -->
+  <circle cx="50" cy="220" r="30" fill="#F1F3F4"/>
+  <circle cx="350" cy="40" r="20" fill="#F1F3F4"/>
+  <rect x="120" y="240" width="160" height="40" rx="20" fill="#F1F3F4"/>
+</svg> 

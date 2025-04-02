@@ -1,0 +1,1627 @@
+:root {
+  --primary-color: #0d46a1;
+  --primary-light: #1e6bd4;
+  --primary-dark: #093175;
+  --secondary-color: #6c63ff;
+  --accent-color: #ff5c7d;
+  --accent-secondary: #ffb74d;
+  --text-primary: #283044;
+  --text-secondary: #455070;
+  --text-tertiary: #6b7280;
+  --background-light: #ffffff;
+  --background-gray: #f4f7fc;
+  --background-dark: #1e293b;
+  --shadow-color: rgba(13, 70, 161, 0.1);
+  --border-color: #e1e7f5;
+  
+  /* Dark theme variables */
+  --dark-primary: #1e6bd4;
+  --dark-background: #121a29;
+  --dark-surface: #1e293b;
+  --dark-text-primary: #f1f5f9;
+  --dark-text-secondary: #cbd5e1;
+  --dark-border-color: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background-color: var(--background-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: var(--primary-light);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn.secondary:hover {
+  background-color: rgba(13, 70, 161, 0.08);
+}
+
+/* Navigation bar */
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* 导航栏右侧图标对齐 */
+.theme-toggle,
+.mobile-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+/* 移动端菜单样式 */
+.mobile-menu-button {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 导航栏右侧容器 */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-content .highlight {
+  color: var(--primary-color);
+  position: relative;
+}
+
+.hero-content .highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
+  transform: scaleX(0.8);
+  opacity: 0.7;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stats section */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 5%;
+  background-color: var(--background-gray);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card span {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.stat-card h2 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* 为统计区域图标添加样式 */
+.stats span {
+  color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(13, 70, 161, 0.1);
+  border-radius: 50%;
+}
+
+/* Apps section */
+.apps {
+  padding: 5rem 5%;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* App card样式优化 */
+.app-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.app-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.app-details h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  min-height: 2.8rem; /* 确保两行标题的空间 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  height: 24px;
+}
+
+.app-rating .material-symbols-outlined {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.app-rating .filled {
+  color: #f8c53a;
+}
+
+.rating-number {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.3rem;
+  color: var(--text-secondary);
+}
+
+.app-details p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+  min-height: 3.6rem; /* 固定高度，确保3-4行文字 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-link {
+  display: block;
+  align-self: flex-start;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Features section */
+.features {
+  padding: 5rem 5%;
+  background-color: var(--background-gray);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  border-color: rgba(13, 70, 161, 0.2);
+}
+
+.feature-card span {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  display: block;
+  background: var(--background-gray);
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+}
+
+/* About section */
+.about {
+  padding: 5rem 5%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content .section-title {
+  text-align: left;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.about-content .btn {
+  margin-top: 20px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Testimonials section */
+.testimonials {
+  padding: 5rem 5%;
+  background-color: var(--background-gray);
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* 为iOS添加平滑滚动 */
+  touch-action: pan-x; /* 允许触摸设备上的水平滑动 */
+  cursor: grab;
+  scroll-snap-type: x mandatory; /* 强制横向滑动对齐 */
+}
+
+.testimonial-carousel:active {
+  cursor: grabbing;
+}
+
+.testimonial-carousel .testimonial-card {
+  scroll-snap-align: start; /* 使卡片滑动时对齐到开始位置 */
+}
+
+.testimonial-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 60px;
+  color: var(--primary-light);
+  opacity: 0.1;
+  font-family: serif;
+}
+
+.testimonial-rating {
+  margin-bottom: 20px;
+}
+
+.testimonial-rating span {
+  color: var(--accent-secondary);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.testimonial-author h4 {
+  font-weight: 500;
+}
+
+.testimonial-author p {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contact section */
+.contact {
+  padding: 5rem 5%;
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(13, 70, 161, 0.1);
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info-item span {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 15px;
+  background: var(--background-gray);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-gray);
+  color: var(--text-secondary);
+  padding: 1rem 5%;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-content p {
+    margin: 0 auto 2.5rem auto;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .about {
+    flex-direction: column;
+  }
+  
+  .about-content .section-title {
+    text-align: center;
+  }
+  
+  .contact-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--background-light);
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* 修改移动端卡片样式 */
+  .feature-card, .testimonial-card {
+    min-width: 100%;
+  }
+  
+  /* 移动端轮播样式调整 */
+  .carousel-container {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .app-carousel .app-card {
+    min-width: 260px;
+    max-width: 100%;
+    flex: 0 0 80%;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-carousel .testimonial-card {
+    min-width: 260px;
+    flex: 0 0 80%;
+    margin-bottom: 10px;
+  }
+  
+  .app-details h3 {
+    font-size: 1.3rem;
+  }
+  
+  .app-details p {
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0;
+  }
+  
+  .app-carousel .app-card,
+  .testimonial-carousel .testimonial-card {
+    min-width: 230px;
+    flex: 0 0 85%;
+    margin-bottom: 5px;
+    height: auto;
+    max-height: none;
+    margin-right: 5px;
+  }
+  
+  /* App栏整体高度调整 */
+  .app-carousel {
+    padding: 8px 0;
+    gap: 10px;
+  }
+  
+  /* 调整轮播区域内部间距 */
+  .apps {
+    padding: 2rem 3% 3rem;
+  }
+  
+  .section-title {
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  /* 应用卡片移动端样式 */
+  .app-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px !important;
+    overflow: visible;
+    min-height: unset;
+    height: auto;
+    border-radius: 8px;
+    min-width: 230px;
+    max-width: 260px;
+    margin-right: 8px;
+  }
+  
+  .app-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    margin: 0 10px 0 0;
+  }
+  
+  .app-details {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-details h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    font-weight: 500;
+    min-height: unset;
+  }
+  
+  .app-rating {
+    margin-bottom: 3px;
+  }
+  
+  .app-rating span, 
+  .rating-number {
+    font-size: 0.75rem;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 14px !important;
+  }
+  
+  .app-details p {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    min-height: unset;
+    max-height: 2.4em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .app-link img {
+    max-height: 28px;
+  }
+  
+  /* 评论卡片移动端样式 */
+  .testimonial-card {
+    padding: 15px;
+  }
+  
+  .testimonial-rating {
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-rating span {
+    font-size: 0.85rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    /* 限制文本高度 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .testimonial-author img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  
+  .testimonial-author h4 {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-author p {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-dots {
+    margin-top: 10px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* 超小屏幕设备优化 */
+@media (max-width: 375px) {
+  .app-carousel .app-card,
+  .testimonial-carousel .testimonial-card {
+    min-width: 200px;
+    flex: 0 0 80%;
+  }
+  
+  .app-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+  
+  .app-details h3 {
+    font-size: 1rem;
+  }
+  
+  .app-link img {
+    max-height: 32px;
+  }
+}
+
+/* Dark theme */
+.dark-theme {
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --background-light: var(--dark-background);
+  --background-gray: var(--dark-surface);
+  --border-color: var(--dark-border-color);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme header,
+.dark-theme .app-card,
+.dark-theme .feature-card,
+.dark-theme .testimonial-card,
+.dark-theme .contact-form,
+.dark-theme .nav-links {
+  background-color: var(--dark-surface);
+}
+
+.dark-theme .nav-links {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .app-icon {
+  background-color: var(--dark-background);
+}
+
+.dark-theme .feature-card span,
+.dark-theme .info-item span {
+  background-color: rgba(13, 70, 161, 0.2);
+}
+
+/* App Grid 修改为轮播样式 */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* 轮播容器 */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+/* 应用轮播样式优化 */
+.app-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.app-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* APP图标链接样式 */
+.app-link img {
+  height: auto;
+  max-height: 50px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+/* 轮播指示点样式 */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-color);
+}
+
+/* 实心星星样式 */
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1;
+  color: #FFA726; /* 使用更明亮的金黄色 */
+}
+
+/* 半星和空心星样式 */
+.app-rating .material-symbols-outlined:not(.filled),
+.testimonial-rating .material-symbols-outlined:not(.filled) {
+  color: #FFA726; /* 保持一致的颜色 */
+}
+
+/* 优化移动端的应用卡片布局 */
+@media (max-width: 480px) {
+  /* 应用卡片紧凑设计 */
+  .app-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px !important;
+    overflow: visible;
+    min-height: unset;
+    height: auto;
+    border-radius: 8px;
+    min-width: 230px;
+    max-width: 260px;
+    margin-right: 8px;
+  }
+  
+  .app-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    margin: 0 10px 0 0;
+  }
+  
+  .app-details {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .app-details h3 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    font-weight: 500;
+    min-height: unset;
+  }
+  
+  .app-rating {
+    margin-bottom: 3px;
+  }
+  
+  .app-rating span, 
+  .rating-number {
+    font-size: 0.75rem;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 14px !important;
+  }
+  
+  .app-details p {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    min-height: unset;
+    max-height: 2.4em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .app-link img {
+    max-height: 28px;
+  }
+}
+
+/* 超小屏幕的额外优化 */
+@media (max-width: 376px) {
+  /* 超小屏幕简化轮播体验 */
+  .app-card {
+    min-width: 200px;
+    max-width: 240px;
+    padding: 8px !important;
+  }
+  
+  .testimonial-card {
+    min-width: 210px;
+    max-width: 250px;
+    padding: 12px !important;
+  }
+  
+  /* 减小轮播内边距 */
+  .app-carousel, 
+  .testimonial-carousel {
+    padding: 0.4rem 0.4rem 0.8rem;
+    gap: 6px;
+  }
+  
+  /* 简化轮播点设计 */
+  .dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+  }
+}
+
+/* 调整评论区轮播间距 */
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 2rem 3% 3rem;
+  }
+  
+  .testimonial-carousel {
+    padding: 8px 0;
+    gap: 10px;
+  }
+}
+
+/* 评论卡片小屏幕优化 */
+@media (max-width: 376px) {
+  .testimonial-card {
+    padding: 10px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    -webkit-line-clamp: 2;
+    max-height: 2.6em;
+  }
+  
+  .testimonial-author img {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+  }
+  
+  .testimonial-author h4 {
+    font-size: 0.8rem;
+  }
+  
+  .testimonial-author p {
+    font-size: 0.7rem;
+  }
+  
+  .testimonial-rating {
+    margin-bottom: 6px;
+  }
+  
+  .testimonial-rating span {
+    font-size: 12px !important;
+  }
+}
+
+/* Stats section 小屏幕优化 */
+@media (max-width: 480px) {
+  /* 更改统计区域布局为两行两列网格 */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 3%;
+    gap: 8px;
+  }
+  
+  .stat-card {
+    text-align: center;
+    min-width: unset;
+    width: auto;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 加大统计卡片内图标尺寸 */
+  .stat-card span {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    background-color: rgba(13, 70, 161, 0.15);
+    margin-bottom: 0.4rem;
+  }
+  
+  /* 设置数字大小 */
+  .stat-card h2 {
+    font-size: 1.8rem;
+    margin: 0.2rem 0;
+    font-weight: 700;
+  }
+}
+
+/* 超小屏幕上的统计数据进一步优化 */
+@media (max-width: 376px) {
+  /* 调整统计区域内容显示 */
+  .stat-card {
+    padding: 8px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 在超小屏幕上让数据统计区跟紧下方内容 */
+  .stats {
+    margin-bottom: -1rem;
+  }
+  
+  /* 在iPhone SE上进一步放大图标 */
+  .stat-card span {
+    width: 60px;
+    height: 60px;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(13, 70, 161, 0.18);
+  }
+  
+  /* 统计数字大小 */
+  .stat-card h2 {
+    font-size: 1.9rem;
+    margin: 0.3rem 0;
+  }
+  
+  /* 标签文字大小 */
+  .stat-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 全局小屏幕布局优化 */
+@media (max-width: 480px) {
+  /* 减少各区域内边距和外边距 */
+  section {
+    padding: 1.5rem 3% !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* 缩小Hero区域 */
+  .hero {
+    padding: 1rem 5% 1.5rem !important;
+  }
+  
+  /* 减小标题和文本大小 */
+  .section-title {
+    margin-bottom: 0.5rem !important;
+    font-size: 1.6rem !important;
+  }
+  
+  .section-description {
+    margin-bottom: 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* 调整标题和按钮的间距 */
+  .hero-content h1 {
+    font-size: 2rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  
+  /* 缩小按钮大小 */
+  .btn {
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* 减少数据统计区域的间距 */
+  .stats {
+    padding: 0.8rem 3% 1rem !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* 缩小特性卡片内边距 */
+  .feature-card {
+    padding: 20px !important;
+  }
+  
+  /* 应用轮播和评价轮播的外边距 */
+  .carousel-container {
+    margin: 0.5rem 0 1rem !important;
+  }
+  
+  /* 缩小轮播指示点的间距 */
+  .carousel-dots {
+    margin-top: 0.5rem !important;
+  }
+  
+  /* 减少页脚空间 */
+  footer {
+    padding: 2rem 5% 1rem !important;
+  }
+  
+  /* 调整页脚内容间距 */
+  .footer-logo {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .footer-bottom {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+}
+
+/* 超小屏幕进一步优化 */
+@media (max-width: 376px) {
+  /* 进一步减少内边距 */
+  section {
+    padding: 1.2rem 3% !important;
+  }
+  
+  /* 极小化Hero区域 */
+  .hero {
+    padding: 0.8rem 5% 1.2rem !important;
+  }
+  
+  /* 更小的标题 */
+  .section-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  
+  /* 更小的描述文本 */
+  .section-description {
+    margin-bottom: 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* 减小Hero标题和按钮 */
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .hero-content p {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* 缩小应用和评价卡片的间距 */
+  .app-carousel, 
+  .testimonial-carousel {
+    padding: 0.5rem !important;
+    gap: 0.6rem !important;
+  }
+  
+  /* 减少页脚空间 */
+  footer {
+    padding: 1.5rem 5% 0.8rem !important;
+  }
+  
+  /* 调整联系表单的内边距 */
+  .contact-form {
+    padding: 20px !important;
+  }
+  
+  .form-group {
+    margin-bottom: 12px !important;
+  }
+  
+  /* 优化关于区域 */
+  .about-content p {
+    margin-bottom: 10px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* 评论卡片调整 */
+.testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  min-width: 300px;
+  max-width: 500px;
+  flex: 0 0 auto;
+  border: 1px solid var(--border-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 330px; /* 固定最小高度确保对齐 */
+}
+
+.testimonial-rating {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex-grow: 1;
+  overflow-wrap: break-word;
+  /* 移除溢出隐藏和行数限制 */
+  overflow: visible;
+  display: block;
+  min-height: 150px; /* 给足够空间显示完整评论 */
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  height: 50px;
+  /* 确保始终在底部 */
+  position: relative;
+  bottom: 0;
+}
+
+/* 移动端评论卡片样式优化 */
+@media (max-width: 480px) {
+  /* 评论卡片适配移动端 */
+  .testimonial-card {
+    padding: 15px !important;
+    min-width: 240px;
+    max-width: 280px;
+    min-height: 250px; /* 调整移动端最小高度 */
+  }
+  
+  /* 评论文本适配移动端 */
+  .testimonial-text {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    min-height: 100px; /* 移动端评论文本最小高度 */
+    /* 移除行数限制 */
+    display: block;
+    overflow: visible;
+  }
+  
+  /* 用户信息适配移动端 */
+  .testimonial-author {
+    height: 40px;
+  }
+  
+  .testimonial-author img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+  }
+}
+
+/* 超小屏幕评论适配 */
+@media (max-width: 376px) {
+  .testimonial-card {
+    padding: 12px !important;
+    min-width: 210px;
+    max-width: 250px;
+    min-height: 230px; /* 超小屏幕最小高度 */
+  }
+  
+  .testimonial-text {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    min-height: 90px; /* 超小屏幕评论文本最小高度 */
+    line-height: 1.3;
+    /* 移除行数限制 */
+    display: block;
+    overflow: visible;
+  }
+  
+  .testimonial-author {
+    height: 36px;
+  }
+  
+  .testimonial-author img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+  
+  .testimonial-author h4 {
+    font-size: 0.85rem;
+  }
+  
+  .testimonial-author p {
+    font-size: 0.75rem;
+  }
+}
+
+/* 优化移动端联系区域 */
+@media (max-width: 480px) {
+  /* 联系区域更紧凑 */
+  .contact-form {
+    padding: 15px !important;
+  }
+  
+  .form-group {
+    margin-bottom: 12px !important;
+  }
+  
+  .form-group label {
+    margin-bottom: 4px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 8px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* 联系信息更紧凑 */
+  .info-item {
+    margin-bottom: 10px !important;
+  }
+  
+  .info-item p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* 社交链接更紧凑 */
+  .social-links {
+    margin-top: 15px !important;
+  }
+}
+
+/* 优化导航栏在移动端的显示 */
+@media (max-width: 480px) {
+  /* 减小导航栏高度 */
+  nav {
+    padding: 0.6rem 4% !important;
+  }
+  
+  /* 减小logo尺寸 */
+  .logo img {
+    height: 32px !important;
+  }
+  
+  .logo span {
+    font-size: 1.2rem !important;
+  }
+  
+  /* 减小导航链接间距 */
+  .nav-links {
+    top: 55px !important;
+    padding: 10px !important;
+  }
+  
+  .nav-links li {
+    margin: 5px 0 !important;
+  }
+}
+
+/* 轮播和评论容器样式 */
+@media (max-width: 480px) {
+  /* 应用轮播和评论轮播容器 */
+  .app-carousel, 
+  .testimonial-carousel {
+    padding: 0.5rem 0.5rem 1rem;
+    gap: 8px;
+  }
+  
+  /* 轮播到卡片末尾显示下一张的预览 */
+  .carousel-container::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 40px;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to right, transparent, rgba(244, 247, 252, 0.8));
+    pointer-events: none;
+    z-index: 10;
+  }
+} 

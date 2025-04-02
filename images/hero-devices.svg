@@ -1,0 +1,46 @@
+<svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 平板电脑 -->
+  <rect x="50" y="50" width="280" height="200" rx="10" fill="#E0E0E0"/>
+  <rect x="60" y="60" width="260" height="180" rx="5" fill="white"/>
+  <rect x="60" y="60" width="260" height="180" rx="5" stroke="#BDBDBD" stroke-width="1"/>
+
+  <!-- 平板电脑屏幕内容 -->
+  <rect x="80" y="80" width="120" height="20" rx="4" fill="#0F9D58" fill-opacity="0.7"/>
+  <rect x="80" y="110" width="220" height="10" rx="2" fill="#E0E0E0"/>
+  <rect x="80" y="130" width="180" height="10" rx="2" fill="#E0E0E0"/>
+  <rect x="80" y="150" width="200" height="10" rx="2" fill="#E0E0E0"/>
+  <rect x="80" y="180" width="60" height="30" rx="4" fill="#4285F4"/>
+  <rect x="150" y="180" width="60" height="30" rx="4" stroke="#4285F4" stroke-width="2" fill="white"/>
+
+  <!-- 智能手机 -->
+  <rect x="370" y="100" width="100" height="180" rx="10" fill="#212121"/>
+  <rect x="380" y="120" width="80" height="140" rx="2" fill="white"/>
+  <circle cx="420" cy="110" r="3" fill="#424242"/>
+  <rect x="410" y="270" width="20" height="3" rx="1.5" fill="#424242"/>
+
+  <!-- 手机屏幕内容 -->
+  <rect x="390" y="130" width="40" height="10" rx="2" fill="#4285F4" fill-opacity="0.7"/>
+  <rect x="390" y="150" width="60" height="6" rx="1" fill="#E0E0E0"/>
+  <rect x="390" y="160" width="50" height="6" rx="1" fill="#E0E0E0"/>
+  <rect x="390" y="170" width="55" height="6" rx="1" fill="#E0E0E0"/>
+  <rect x="390" y="185" width="25" height="20" rx="4" fill="#0F9D58"/>
+  
+  <!-- 装饰元素 -->
+  <circle cx="150" cy="320" r="50" fill="#F8F9FA"/>
+  <circle cx="350" cy="80" r="30" fill="#F8F9FA"/>
+  <path d="M420 50C420 33.4315 433.431 20 450 20V20C466.569 20 480 33.4315 480 50V50C480 66.5685 466.569 80 450 80V80C433.431 80 420 66.5685 420 50V50Z" fill="#F8F9FA"/>
+  
+  <!-- 应用图标 -->
+  <rect x="90" y="250" width="40" height="40" rx="10" fill="#4285F4"/>
+  <circle cx="110" cy="270" r="10" stroke="white" stroke-width="2"/>
+  <path d="M110 260V270L116 276" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <rect x="140" y="250" width="40" height="40" rx="10" fill="#DB4437"/>
+  <rect x="150" y="260" width="20" height="20" rx="2" stroke="white" stroke-width="2"/>
+  <line x1="150" y1="270" x2="170" y2="270" stroke="white" stroke-width="2"/>
+  
+  <rect x="190" y="250" width="40" height="40" rx="10" fill="#0F9D58"/>
+  <path d="M200 260L220 260" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 270L215 270" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M200 280L210 280" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg> 
