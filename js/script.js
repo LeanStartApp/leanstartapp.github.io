@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
       
       // 创建mailto链接
-      const mailtoLink = `mailto:gosomatu@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      const mailtoLink = `mailto:support@leanstart.app?subject=${mailtoSubject}&body=${mailtoBody}`;
       
       // 打开邮件客户端
       window.location.href = mailtoLink;
