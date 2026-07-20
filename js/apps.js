@@ -81,6 +81,16 @@ const APPS = [
     featured: true,
   },
   {
+    name: "Volume Lock+",
+    fn: "Volume limiter",
+    group: "audio",
+    // 新上架，Google Play 尚无聚合评分——留空会渲染成 "new" 而不是假分数
+    icon: "https://play-lh.googleusercontent.com/WesFbsP-_EIOaKXHz1f0YqQp9pt8-DlQXfuY86zIk_lG_JxDqLpOj87A0EsDy_ikn5Sln7h15unAxPxf-qH2NA=s128-rw",
+    url: "https://play.google.com/store/apps/details?id=volumelock.plus",
+    desc: "Lock volume per channel with a max cap and PIN — nothing changes it behind your back.",
+    featured: false,
+  },
+  {
     name: "SAI+",
     fn: "APK installer",
     group: "tools",
@@ -119,6 +129,16 @@ const APPS = [
     url: "https://play.google.com/store/apps/details?id=timewarpscan.bluelinefilter.timewarpscaneffect.timewarpscanfilterapp.bluelinefiltertiktok",
     desc: "The blue-line time-warp scan effect for fun camera clips.",
     featured: false,
+  },
+  {
+    name: "Gloo Wall",
+    fn: "Game macro",
+    group: "fun",
+    rating: "4.3",
+    icon: "https://play-lh.googleusercontent.com/B2Jr4-Eg_BEQtg1zEzi1v8pO6TE_zm1u0kfBgPijmnbLr4UGSrdFm10Xv2-ZQaBD14Rf4QSD6nQ_XiNb-zRLzA=s128-rw",
+    url: "https://play.google.com/store/apps/details?id=fastgloowall.autogloowall.volumegloowall.gloowallpro.ffgloowall.gloowallfast",
+    desc: "One-tap gloo wall drops for Free Fire, with fully customizable buttons.",
+    featured: true,
   },
 ];
 

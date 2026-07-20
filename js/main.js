@@ -33,6 +33,22 @@
     return String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
 
+  /* ---- app count: 从 APPS 自动算，加新 app 时不用再改 HTML ----
+     HTML 里保留了正确的静态值作兜底，JS 失效时不会显示空白 */
+  if (typeof APPS !== "undefined") {
+    var COUNT_WORDS = {
+      10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen", 14: "Fourteen",
+      15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen", 20: "Twenty"
+    };
+    var count = APPS.length;
+    Array.prototype.forEach.call(document.querySelectorAll(".app-count"), function (el) {
+      el.textContent = String(count);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".app-count-word"), function (el) {
+      el.textContent = COUNT_WORDS[count] || String(count);
+    });
+  }
+
   /* ---- hero app drawer (all apps + a placeholder) ---- */
   var drawer = document.getElementById("appDrawer");
   if (drawer && typeof APPS !== "undefined") {
@@ -59,7 +75,7 @@
           '<span><span class="proc-name">' + esc(a.name) + '</span>' +
           '<span class="proc-slug">' + esc(slugify(a.fn)) + '</span></span>' +
           '<span class="proc-desc">' + esc(a.desc) + '</span>' +
-          '<span class="proc-rating">' + esc(a.rating) + '★</span>' +
+          '<span class="proc-rating">' + (a.rating ? esc(a.rating) + '★' : 'new') + '</span>' +
           '<span class="proc-open">open <span class="arr">↗</span></span>' +
           '</a>';
       }).join("");
