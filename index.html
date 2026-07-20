@@ -120,14 +120,14 @@
       </div>
       <div class="card">
         <form id="contactForm">
-          <label class="field"><span>name</span><input required placeholder="Your name"></label>
-          <label class="field"><span>email</span><input required type="email" placeholder="you@email.com"></label>
-          <label class="field"><span>message</span><textarea required rows="4" placeholder="How can we help?"></textarea></label>
+          <label class="field"><span>name</span><input required id="cfName" name="name" autocomplete="name" placeholder="Your name"></label>
+          <label class="field"><span>email</span><input required id="cfEmail" name="email" type="email" autocomplete="email" placeholder="you@email.com"></label>
+          <label class="field"><span>message</span><textarea required id="cfMessage" name="message" rows="4" placeholder="How can we help?"></textarea></label>
           <button type="submit" class="submit">Send message</button>
         </form>
         <div class="form-done" id="formDone" hidden>
-          <div class="big">✓ message sent</div>
-          <p>We'll reply at the email you gave us.</p>
+          <div class="big">✓ opening your email app</div>
+          <p>Your message is ready to send to support@leanstart.app — just hit send. If nothing opened, email us directly.</p>
         </div>
       </div>
     </div>

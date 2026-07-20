@@ -84,12 +84,23 @@
     }).join("");
   }
 
-  /* ---- contact form ---- */
+  /* ---- contact form: hands the message to the visitor's mail client ---- */
+  var CONTACT_EMAIL = "support@leanstart.app";
   var form = document.getElementById("contactForm");
   var done = document.getElementById("formDone");
   if (form && done) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      function val(id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : "";
+      }
+      var name = val("cfName");
+      var subject = encodeURIComponent(name ? "Contact from " + name : "Contact from leanstartapp.com");
+      var body = encodeURIComponent(
+        "Name: " + name + "\nEmail: " + val("cfEmail") + "\n\n" + val("cfMessage")
+      );
+      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
       form.hidden = true;
       done.hidden = false;
     });
