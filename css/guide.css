@@ -1,0 +1,65 @@
+/* Lean StartApp — shared guide/article components (used by the XAPK topic cluster).
+   Pairs with style.css (base, nav, .legal typography, footer). */
+
+.crumb { font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); margin-bottom: 18px; }
+.crumb a { color: var(--accent-bright); }
+.crumb span { margin: 0 7px; opacity: .6; }
+
+.lede { font-size: 18px; line-height: 1.65; color: var(--text); margin: 8px 0 26px; }
+
+.toc { border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin: 8px 0 34px; background: var(--surface); }
+.toc .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+.toc ol { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 28px; font-family: var(--font-mono); font-size: 13px; }
+.toc li { margin-bottom: 9px; break-inside: avoid; }
+.toc a { color: var(--accent-bright); }
+.toc a:hover { opacity: .65; }
+
+/* recommended-tool CTA card */
+.cta-card { display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+  border: 1px solid var(--accent); background: var(--accent-soft);
+  border-radius: 16px; padding: 22px 24px; margin: 30px 0; }
+.cta-card img { width: 60px; height: 60px; border-radius: 14px; border: 1px solid var(--border); flex: none; }
+.cta-card .body { flex: 1; min-width: 210px; }
+.cta-card .body .nm { font-weight: 700; font-size: 17px; }
+.cta-card .body .nm small { font-family: var(--font-mono); font-weight: 500; font-size: 11px; color: var(--accent-bright); margin-left: 8px; letter-spacing: .04em; }
+.cta-card .body p { font-size: 14px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.cta-card .btn { flex: none; }
+
+/* numbered steps */
+ol.steps { counter-reset: step; margin: 20px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; }
+ol.steps > li { position: relative; padding-left: 46px; min-height: 32px; }
+ol.steps > li::before { counter-increment: step; content: counter(step);
+  position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 9px;
+  display: grid; place-items: center; background: var(--accent); color: #fff;
+  font-family: var(--font-mono); font-weight: 700; font-size: 14px; }
+ol.steps > li strong { color: var(--text); }
+ol.steps > li p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+/* callout */
+.callout { border-left: 3px solid var(--accent); background: var(--surface);
+  border-radius: 0 10px 10px 0; padding: 15px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+.callout.warn { border-left-color: #e0803a; }
+.callout b { color: var(--text); }
+
+/* comparison table */
+.cmp-wrap { overflow-x: auto; margin: 22px 0; }
+table.cmp { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+table.cmp th, table.cmp td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border-soft); }
+table.cmp th { font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); border-bottom: 1px solid var(--border); }
+table.cmp td:first-child { font-weight: 600; color: var(--text); font-family: var(--font-mono); }
+
+/* faq accordion */
+.faq { margin: 18px 0 8px; }
+.faq details { border-bottom: 1px solid var(--border-soft); padding: 4px 0; }
+.faq summary { cursor: pointer; padding: 14px 0; font-weight: 600; font-size: 15.5px; color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent-bright); font-size: 18px; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { margin: 0 0 16px; font-size: 14.5px; }
+
+/* related guides */
+.related { margin: 40px 0 8px; border-top: 1px solid var(--border); padding-top: 24px; }
+.related .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; }
+.related a { display: block; color: var(--accent-bright); font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+.related a:hover { opacity: .7; }
+.related a span { color: var(--muted); font-weight: 400; font-size: 13.5px; }
