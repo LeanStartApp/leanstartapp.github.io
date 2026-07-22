@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============ SEO ============ -->
+  <title>How to Install XAPK &amp; APKS Files on Android (2026 Guide)</title>
+  <meta name="description" content="Install XAPK, APKS, APKM & split APK files on Android in one tap — no root, no PC. Step-by-step guide, plus fixes for the 'can't install XAPK' error.">
+  <link rel="canonical" href="https://leanstart.app/how-to-install-xapk/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Install XAPK & APKS Files on Android (2026 Guide)">
+  <meta property="og:description" content="Install XAPK, APKS, APKM & split APK files on Android in one tap — no root, no PC. Step-by-step, plus fixes for the 'can't install XAPK' error.">
+  <meta property="og:url" content="https://leanstart.app/how-to-install-xapk/">
+  <meta property="og:site_name" content="Lean StartApp">
+  <meta property="og:image" content="https://leanstart.app/images/android-chrome-512x512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Install XAPK & APKS Files on Android (2026 Guide)">
+  <meta name="twitter:description" content="Install XAPK, APKS, APKM & split APK files on Android in one tap — no root, no PC.">
+  <meta name="twitter:image" content="https://leanstart.app/images/android-chrome-512x512.png">
+
+  <!-- ============ Google Search Console verification ============
+       Preferred: verify the whole domain via a DNS TXT record in Namecheap.
+       Or paste the <meta> tag Google gives you right here, e.g.:
+       <meta name="google-site-verification" content="PASTE_TOKEN_HERE">
+  ============================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <meta name="theme-color" content="#0066ff">
+
+  <!-- ============ Structured data ============
+       Note: Google deprecated HowTo rich results (2023) and limited FAQ rich
+       results to gov/health sites — so these won't guarantee a rich snippet,
+       but they still help Google understand the page. BreadcrumbList DOES
+       still render. Add a VideoObject block once a tutorial video exists. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Install XAPK & APKS Files on Android",
+    "description": "A step-by-step guide to installing XAPK, APKS, APKM, OBB and split APK files on Android — no root or PC required.",
+    "inLanguage": "en",
+    "datePublished": "2026-07-22",
+    "dateModified": "2026-07-22",
+    "author": { "@type": "Organization", "name": "Lean StartApp", "url": "https://leanstart.app/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lean StartApp",
+      "logo": { "@type": "ImageObject", "url": "https://leanstart.app/images/android-chrome-512x512.png" }
+    },
+    "mainEntityOfPage": "https://leanstart.app/how-to-install-xapk/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://leanstart.app/" },
+      { "@type": "ListItem", "position": 2, "name": "How to install XAPK", "item": "https://leanstart.app/how-to-install-xapk/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is an XAPK file?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An XAPK is a ZIP-style bundle that packs an app's base APK together with its split APKs and/or OBB data files. Android's built-in installer only opens plain .apk files, so an XAPK needs an installer app to unpack and install every part in the right place." } },
+      { "@type": "Question", "name": "How do I open an XAPK file on Android?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Install a free XAPK installer such as SAI+, open it, pick the .xapk file, and tap Install. The app extracts the split APKs and OBB data and installs them automatically — no root or PC needed." } },
+      { "@type": "Question", "name": "Why won't my XAPK install?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The most common causes are that 'Install unknown apps' is turned off for the installer, storage permission is missing, an older version of the app is already installed with a different signature, or the download was corrupted. Grant the permissions, uninstall the old copy, and re-download the file." } },
+      { "@type": "Question", "name": "Is it safe to install XAPK files?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The XAPK format itself is safe — it is just a container. The real question is whether the app inside comes from a source you trust. An installer unpacks the file but does not make an unknown app safe, so only install XAPKs from developers or stores you already trust." } }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ---- hub article: page-scoped components (reuse global vars + .legal typography) ---- */
+    .crumb { font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); margin-bottom: 18px; }
+    .crumb a { color: var(--accent-bright); }
+    .crumb span { margin: 0 7px; opacity: .6; }
+    .lede { font-size: 18px; line-height: 1.65; color: var(--text); margin: 8px 0 26px; }
+
+    .toc { border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin: 8px 0 34px; background: var(--surface); }
+    .toc .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+    .toc ol { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 28px; font-family: var(--font-mono); font-size: 13px; }
+    .toc li { margin-bottom: 9px; break-inside: avoid; }
+    .toc a { color: var(--accent-bright); }
+    .toc a:hover { opacity: .65; }
+
+    /* recommended-tool CTA card */
+    .cta-card { display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+      border: 1px solid var(--accent); background: var(--accent-soft);
+      border-radius: 16px; padding: 22px 24px; margin: 30px 0; }
+    .cta-card img { width: 60px; height: 60px; border-radius: 14px; border: 1px solid var(--border); flex: none; }
+    .cta-card .body { flex: 1; min-width: 210px; }
+    .cta-card .body .nm { font-weight: 700; font-size: 17px; }
+    .cta-card .body .nm small { font-family: var(--font-mono); font-weight: 500; font-size: 11px; color: var(--accent-bright); margin-left: 8px; letter-spacing: .04em; }
+    .cta-card .body p { font-size: 14px; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+    .cta-card .btn { flex: none; }
+
+    /* numbered steps */
+    ol.steps { counter-reset: step; margin: 20px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    ol.steps > li { position: relative; padding-left: 46px; min-height: 32px; }
+    ol.steps > li::before { counter-increment: step; content: counter(step);
+      position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 9px;
+      display: grid; place-items: center; background: var(--accent); color: #fff;
+      font-family: var(--font-mono); font-weight: 700; font-size: 14px; }
+    ol.steps > li strong { color: var(--text); }
+    ol.steps > li p { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+    /* callout */
+    .callout { border-left: 3px solid var(--accent); background: var(--surface);
+      border-radius: 0 10px 10px 0; padding: 15px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+    .callout.warn { border-left-color: #e0803a; }
+    .callout b { color: var(--text); }
+
+    /* comparison table */
+    .cmp-wrap { overflow-x: auto; margin: 22px 0; }
+    table.cmp { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+    table.cmp th, table.cmp td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border-soft); }
+    table.cmp th { font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--faint); border-bottom: 1px solid var(--border); }
+    table.cmp td:first-child { font-weight: 600; color: var(--text); font-family: var(--font-mono); }
+
+    /* faq accordion */
+    .faq { margin: 18px 0 8px; }
+    .faq details { border-bottom: 1px solid var(--border-soft); padding: 4px 0; }
+    .faq summary { cursor: pointer; padding: 14px 0; font-weight: 600; font-size: 15.5px; color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent-bright); font-size: 18px; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { margin: 0 0 16px; font-size: 14.5px; }
+
+    /* video slot */
+    .video-embed { position: relative; padding-top: 56.25%; margin: 22px 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-slot { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--faint); padding: 20px; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <nav class="wrap" style="max-width:920px">
+      <a href="../" class="brand">
+        <span class="mark mark-30"><i></i></span>
+        <span class="brand-name">leanstartapp<span class="cursor">_</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="sys-link" href="../">← back to site</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark mode">☀</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="legal">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="../">Home</a><span>/</span>How to install XAPK
+    </nav>
+
+    <div class="kicker"># guide / android</div>
+    <h1>How to Install XAPK, APKS &amp; Split APK Files on Android</h1>
+    <div class="updated">last updated: 2026-07-22 · ~5 min read</div>
+
+    <div class="legal-body">
+      <p class="lede">Downloaded an <b>.xapk</b> or <b>.apks</b> file and Android won't open it? That's normal — the built-in installer only handles plain <code>.apk</code> files. This guide shows the fastest way to install XAPK, APKS, APKM, OBB and split APK files in one tap, on any Android phone, TV or tablet — <b>no root and no PC required</b> — plus fixes for when an XAPK won't install.</p>
+
+      <!-- TABLE OF CONTENTS -->
+      <div class="toc">
+        <div class="h">On this page</div>
+        <ol>
+          <li><a href="#what-is-xapk">What is an XAPK file?</a></li>
+          <li><a href="#one-tap">Install an XAPK in one tap</a></li>
+          <li><a href="#steps">Step-by-step install</a></li>
+          <li><a href="#tv">Install on Android TV / Fire TV</a></li>
+          <li><a href="#formats">APKS, APKM &amp; split APKs</a></li>
+          <li><a href="#cant-install">Can't install XAPK? Fixes</a></li>
+          <li><a href="#safe">Is XAPK safe?</a></li>
+          <li><a href="#compare">XAPK vs APKS vs APKM vs AAB</a></li>
+          <li><a href="#pc">On PC or iPhone?</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+
+      <!-- WHAT IS XAPK -->
+      <h2 id="what-is-xapk">What is an XAPK file?</h2>
+      <p>An <b>XAPK</b> is a ZIP-style bundle that packs an app's <b>base APK</b> together with its <b>split APKs</b> (extra code, languages or screen-density resources) and, for many games, an <b>OBB</b> expansion file holding large assets. Modern apps on Google Play are delivered this way through the Android App Bundle, so when you download an app outside the Play Store you often get an <code>.xapk</code> or <code>.apks</code> file instead of a single <code>.apk</code>.</p>
+      <p>The catch: Android's built-in package installer only understands a single <code>.apk</code>. Hand it an XAPK and nothing happens. To install one, you need a small helper app that unpacks the bundle and installs every part into the right place — that's what an XAPK installer does.</p>
+
+      <!-- ONE TAP + CTA -->
+      <h2 id="one-tap">The easy way: install an XAPK in one tap</h2>
+      <p>The simplest method is a dedicated installer that reads the whole bundle and does the work for you. We build a free one called <b>SAI+</b> (Split APKs Installer) — it installs XAPK, APKS, APKM, AAB, OBB and split APK files with a single tap, works fully offline, needs no root or PC, and shows only a small banner ad rather than the full-screen ads most installers push.</p>
+
+      <div class="cta-card">
+        <img src="https://play-lh.googleusercontent.com/JsJ1MUNC4c-DnPVEpLfAe-SvLG5ak2rSbPtv1zTHT1pIGP4oUg0GNYQkFuu7p-vgtfOPKn8EZTsql8iIdQqldg=s128-rw" alt="SAI+ app icon" width="60" height="60" loading="lazy">
+        <div class="body">
+          <div class="nm">SAI+ · APK &amp; XAPK Installer <small>FREE · NO ROOT</small></div>
+          <p>Install XAPK, APKS, APKM, OBB &amp; split APK files in one tap. Back up installed apps too.</p>
+        </div>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=sai.split.apks.xapk.installer.obb.aab.xapkinstaller.saiplus&referrer=utm_source%3Dleanstart_hub%26utm_medium%3Dtutorial%26utm_campaign%3Dhowto_xapk" target="_blank" rel="noopener" data-cta="sai-play">Get SAI+ on Google Play ↗</a>
+      </div>
+
+      <!-- VIDEO SLOT (fill when the tutorial video is ready) -->
+      <div class="video-embed">
+        <!-- Replace this slot with the YouTube embed once the video is live:
+        <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="How to install an XAPK file on Android" allowfullscreen loading="lazy"></iframe>
+        -->
+        <div class="video-slot">▶ video walkthrough coming soon</div>
+      </div>
+
+      <!-- STEPS -->
+      <h2 id="steps">Step-by-step: install an XAPK file</h2>
+      <ol class="steps">
+        <li><strong>Download the .xapk (or .apks) file</strong>
+          <p>Save it to your phone — the Downloads folder is fine. Note where it lands so you can find it in the next step.</p></li>
+        <li><strong>Install a free XAPK installer</strong>
+          <p>Get SAI+ (or any trusted installer) from Google Play and open it.</p></li>
+        <li><strong>Allow "Install unknown apps"</strong>
+          <p>When prompted, let the installer install apps. On Android 8 and newer this is a per-app switch under <em>Settings → Apps → Special access → Install unknown apps</em>.</p></li>
+        <li><strong>Select your file and tap Install</strong>
+          <p>In the installer, browse to the <code>.xapk</code> file (or just tap the file in your file manager and choose the installer). It unpacks the base APK, split APKs and OBB data automatically.</p></li>
+        <li><strong>Open the app</strong>
+          <p>When it finishes, tap Open. That's it — no PC, no root, no manual unzipping.</p></li>
+      </ol>
+      <div class="callout"><b>Tip:</b> after the first time you approve "Install unknown apps", future installs are one tap — Android remembers the permission for that installer.</div>
+
+      <!-- ANDROID TV / FIRE TV -->
+      <h2 id="tv">Install an XAPK on Android TV, Fire TV or Firestick</h2>
+      <p>Streaming devices run Android too, so the same idea works — you just need a way to move the file over and a file browser. On <b>Fire TV / Firestick</b>, enable <em>Settings → My Fire TV → Developer options → Apps from Unknown Sources</em>, use a sideloading tool (such as the Downloader app) to fetch the file, then open it with an installer that supports split APKs. On <b>Android TV / Google TV</b>, enable unknown sources for your file app under <em>Settings → Apps → Security</em>, then install as above.</p>
+      <div class="callout warn"><b>Heads up:</b> some installers rely on touch gestures that are awkward with a TV remote. Pick one with a simple, focusable list UI, and make sure the app you're installing is actually built for the TV's screen and CPU.</div>
+
+      <!-- FORMATS -->
+      <h2 id="formats">Installing APKS, APKM and split APK files</h2>
+      <p>These are close cousins of XAPK and install the same way:</p>
+      <ul>
+        <li><strong>.apks</strong> — the output of Google's bundletool; a set of split APKs zipped together. Open it with a split-APK installer.</li>
+        <li><strong>.apkm</strong> — APKMirror's bundle format. Most modern installers, including SAI+, read it directly.</li>
+        <li><strong>split APK folder</strong> — sometimes you get loose <code>base.apk</code> + <code>config.*.apk</code> files. A split-APK installer lets you select them together and installs them as one app.</li>
+      </ul>
+      <p>The key point: all of these contain <em>multiple</em> APK parts, which is exactly why the stock installer refuses them and a bundle-aware installer is needed.</p>
+
+      <!-- TROUBLESHOOTING -->
+      <h2 id="cant-install">Can't install XAPK? Common fixes</h2>
+      <p>If an XAPK won't install, work through these in order — one of them almost always solves it:</p>
+      <ul>
+        <li><strong>"Install unknown apps" is off</strong> — turn it on for the specific installer app (not just globally). This is the number-one cause.</li>
+        <li><strong>Missing storage permission</strong> — grant the installer access to files/storage so it can read the bundle and write OBB data.</li>
+        <li><strong>An older version is already installed</strong> — if the existing app was signed with a different key, uninstall it first, then install the XAPK.</li>
+        <li><strong>Corrupted or partial download</strong> — re-download the file; an interrupted download produces an invalid ZIP that fails to unpack.</li>
+        <li><strong>Not enough free storage</strong> — XAPKs with OBB data can be several GB once extracted. Free up space and retry.</li>
+        <li><strong>"App not installed" on Xiaomi/MIUI</strong> — disable <em>MIUI optimization</em> in Developer options, and turn off the "scan apps before installing" prompt during the install.</li>
+        <li><strong>Wrong architecture</strong> — a split APK built only for arm64 won't install on a 32-bit device. Get the build that matches your phone.</li>
+      </ul>
+      <div class="callout">Still stuck? A good installer will show the exact error (signature mismatch, missing split, low storage). SAI+ surfaces that message so you know which fix above applies.</div>
+
+      <!-- SAFETY -->
+      <h2 id="safe">Is it safe to install XAPK files?</h2>
+      <p>The <b>XAPK format itself is safe</b> — it's just a container, no more dangerous than a ZIP. What matters is <b>where the app inside came from</b>. An installer unpacks and installs the bundle; it does <em>not</em> scan the app or make an untrusted APK safe. So the honest rule is simple:</p>
+      <ul>
+        <li>Only install XAPKs from a <strong>developer or store you already trust</strong>.</li>
+        <li>Be wary of "mod", "premium unlocked" or cracked builds — that's where malware usually hides, not in the format.</li>
+        <li>Keep Google Play Protect enabled; it scans sideloaded apps as an extra layer.</li>
+      </ul>
+      <p>A trustworthy installer keeps out of your way: no account, minimal permissions, and it doesn't quietly install anything extra.</p>
+
+      <!-- COMPARE -->
+      <h2 id="compare">XAPK vs APKS vs APKM vs AAB</h2>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <thead><tr><th>Format</th><th>What it is</th><th>Install on device?</th></tr></thead>
+          <tbody>
+            <tr><td>.apk</td><td>A single, complete Android package</td><td>Yes — stock installer</td></tr>
+            <tr><td>.xapk</td><td>Base APK + split APKs + OBB, zipped</td><td>Yes — needs an installer app</td></tr>
+            <tr><td>.apks</td><td>Split APK set from bundletool</td><td>Yes — needs an installer app</td></tr>
+            <tr><td>.apkm</td><td>APKMirror's split-APK bundle</td><td>Yes — needs an installer app</td></tr>
+            <tr><td>.aab</td><td>App Bundle — a <em>publishing</em> format for Google Play, not for direct install</td><td>Not directly; must be converted to APKs</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>In short: <code>.apk</code> installs on its own; <code>.xapk</code>, <code>.apks</code> and <code>.apkm</code> all need a bundle-aware installer; and <code>.aab</code> is meant for developers, not end users.</p>
+
+      <!-- PC / IPHONE -->
+      <h2 id="pc">Installing an XAPK on PC or iPhone?</h2>
+      <p>XAPK is an <b>Android</b> format. You can't run it on an iPhone or iPad — iOS uses a completely different app system. On a <b>Windows PC or Mac</b>, an XAPK only runs inside an Android emulator (such as one built on Android); on a <b>Chromebook</b> with Play Store support you'd install it through the Android subsystem. For an actual phone or tablet, the one-tap method above is all you need.</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary>What is an XAPK file?</summary>
+          <p>An XAPK is a ZIP-style bundle that packs an app's base APK together with its split APKs and/or OBB data. Android's built-in installer only opens plain <code>.apk</code> files, so an XAPK needs an installer app to unpack and place every part correctly.</p>
+        </details>
+        <details>
+          <summary>How do I open an XAPK file on Android?</summary>
+          <p>Install a free XAPK installer such as SAI+, open it, select the <code>.xapk</code> file, and tap Install. It extracts the split APKs and OBB data and installs them automatically — no root or PC needed.</p>
+        </details>
+        <details>
+          <summary>Why won't my XAPK install?</summary>
+          <p>Usually because "Install unknown apps" is off for the installer, storage permission is missing, an older copy with a different signature is already installed, or the download was corrupted. Grant the permissions, uninstall the old version, and re-download the file.</p>
+        </details>
+        <details>
+          <summary>Do I need root to install XAPK files?</summary>
+          <p>No. A standard installer like SAI+ uses Android's normal install flow — no root, no computer, no ADB required.</p>
+        </details>
+        <details>
+          <summary>Can I install XAPK without an installer app?</summary>
+          <p>Only manually: rename the <code>.xapk</code> to <code>.zip</code>, extract it, copy any OBB folder to <code>Android/obb</code>, and install each APK by hand. It's fiddly and error-prone, which is why a one-tap installer is the practical choice.</p>
+        </details>
+      </div>
+
+      <div class="cta-card">
+        <img src="https://play-lh.googleusercontent.com/JsJ1MUNC4c-DnPVEpLfAe-SvLG5ak2rSbPtv1zTHT1pIGP4oUg0GNYQkFuu7p-vgtfOPKn8EZTsql8iIdQqldg=s128-rw" alt="SAI+ app icon" width="60" height="60" loading="lazy">
+        <div class="body">
+          <div class="nm">Ready to install your XAPK?</div>
+          <p>Get SAI+ free — one-tap XAPK, APKS, APKM &amp; split APK installs. No root, no PC.</p>
+        </div>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=sai.split.apks.xapk.installer.obb.aab.xapkinstaller.saiplus&referrer=utm_source%3Dleanstart_hub%26utm_medium%3Dtutorial%26utm_campaign%3Dhowto_xapk_footer" target="_blank" rel="noopener" data-cta="sai-play-footer">Get SAI+ on Google Play ↗</a>
+      </div>
+
+      <a class="back-btn" href="../">← back to home</a>
+    </div>
+  </main>
+
+  <footer class="legal-foot">
+    <div class="inner">
+      <span>© 2026 lean startapp — all rights reserved</span>
+      <span class="links"><a class="sys-link" href="../privacy-policy.html">/privacy</a><a class="sys-link" href="../terms-of-service.html">/terms</a></span>
+    </div>
+  </footer>
+
+  <!-- ============ Cloudflare Web Analytics ============
+       Paste the beacon snippet Cloudflare gives you (Analytics → Web Analytics →
+       Add a site → "JS snippet"). It works on GitHub Pages without proxying DNS.
+       Example shape (replace TOKEN):
+       <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+         data-cf-beacon='{"token": "TOKEN"}'></script>
+  ==================================================== -->
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
