@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- The app drawer + app table are rendered by these two scripts at the end of
+       <body>. Fetch them up front so they run before the first paint; css/style.css
+       also reserves their space so nothing shifts even if they arrive late. -->
+  <link rel="preload" as="script" href="js/apps.js">
+  <link rel="preload" as="script" href="js/main.js">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" href="images/favicon.ico" sizes="any">

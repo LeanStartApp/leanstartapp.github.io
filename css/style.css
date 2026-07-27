@@ -181,6 +181,17 @@ header.nav nav {
 .drawer-item .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 76px; }
 .drawer-plus { display: grid; place-items: center; width: 62px; aspect-ratio: 1; border: 1px dashed var(--border); border-radius: 16px; font-family: var(--font-mono); font-size: 16px; color: var(--faint); align-self: center; justify-self: center; }
 
+/* ---- space reserved for the two JS-rendered blocks (keeps CLS at 0) ----
+   #appDrawer and #appGroups are empty in index.html; js/main.js fills them
+   after the scripts land. Without a reservation the injected 398px (drawer,
+   above the fold) + 918px (app table) push the page down after first paint —
+   measured CLS 0.333 = "poor" in Cloudflare Web Analytics, 2026-07.
+   Heights measured on the live page at 340–1440px widths.
+   ⚠️ Re-measure these two numbers whenever the app count or row height
+   changes (see the note at the top of js/apps.js). */
+#appDrawer { min-height: 398px; }   /* 4 rows × 62px icon + label — constant at every width */
+#appGroups { min-height: 918px; }   /* 13 rows in 3 groups */
+
 /* ---- stats bar ---- */
 .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .stat { padding: 24px clamp(20px, 3vw, 44px); border-right: 1px solid var(--border); }
@@ -303,4 +314,5 @@ footer.site .inner { padding-top: clamp(36px, 5vw, 52px); padding-bottom: clamp(
   .reviews-grid { grid-template-columns: 1fr; }
   .proc-row { grid-template-columns: 30px 36px 1fr auto; }
   .proc-desc, .proc-slug { display: none; }
+  #appGroups { min-height: 1464px; }  /* rows get taller here — see the reservation note above */
 }

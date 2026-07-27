@@ -1,7 +1,11 @@
 /* Lean StartApp — app catalogue.
    To add an app: copy one { ... } block, fill in the fields, done.
    group must be one of the ids in APP_GROUPS below.
-   The homepage renders these automatically. */
+   The homepage renders these automatically.
+
+   ⚠️ After adding or removing an app, re-measure #appGroups / #appDrawer and
+   update their min-height in css/style.css — those values reserve the space
+   this list occupies and keep the homepage's CLS at 0. */
 
 const APP_GROUPS = [
   { id: "audio", title: "Sound & Audio", kicker: "Boost · tune · record" },
