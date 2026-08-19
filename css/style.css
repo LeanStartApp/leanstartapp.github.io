@@ -289,6 +289,7 @@ footer.site .inner { padding-top: clamp(36px, 5vw, 52px); padding-bottom: clamp(
 .legal .updated { font-family: var(--font-mono); font-size: 12.5px; color: var(--faint); margin-top: 16px; }
 .legal-body { margin-top: clamp(36px, 5vw, 52px); font-size: 16px; line-height: 1.72; color: var(--muted); }
 .legal-body h2 { font-size: clamp(20px, 3vw, 25px); font-weight: 700; letter-spacing: -0.015em; color: var(--text); margin: 42px 0 14px; line-height: 1.2; }
+.legal-body h3 { font-size: clamp(17px, 2.2vw, 19px); font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin: 26px 0 10px; line-height: 1.25; }
 .legal-body p { margin-bottom: 18px; }
 .legal-body ul { margin: 0 0 18px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .legal-body li { position: relative; padding-left: 22px; }
