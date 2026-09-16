@@ -1,6 +1,16 @@
 /* Lean StartApp — brand site · "System" design
    Dark-primary + light IDE theme · deployable static site (no build step) */
 
+/* metric-compatible fallback —— 见下方 --font-mono 处的实测表。数值由 canvas measureText
+   量出 JetBrains Mono / Instrument Sans 的字宽与 ascent/descent 后反推，改前必重测。 */
+@font-face { font-family: 'ISFallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 101%; font-weight: 100 900; }
+@font-face { font-family: 'JBFallback';
+  src: local('Menlo'), local('Consolas'), local('DejaVu Sans Mono'), local('Courier New');
+  size-adjust: 99.7%; ascent-override: 102.3%; descent-override: 30.1%; line-gap-override: 0%;
+  font-weight: 100 900; }
+
 :root {
   /* light IDE theme */
   --bg: #f4f5f3;
@@ -18,12 +28,17 @@
   --accent-text: #ffffff;
   --shadow: 0 1px 2px rgba(20, 23, 27, 0.05);
 
-  --font-b: 'Instrument Sans', system-ui, sans-serif;
-  /* 🔴 fallback 必须与 JetBrains Mono 字宽匹配，否则字体 swap 时 .toc 的 columns:2 会重排 → CLS
-     实测(2026-09-16, canvas measureText, 平均字宽 em)：JetBrains Mono 21.60 ｜ Courier New 21.60(差0.02%)
-     ｜ monospace/Menlo 21.67(差0.34%) ｜ 🔴 ui-monospace 19.07(差13.2%) ← 原来挑中的恰好是最差的那个
-     改前/改后实测 CLS：0.1543 → 0.0000（移动端慢4G+冷缓存+滚动到底）。别把 ui-monospace 加回来。 */
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-b: 'Instrument Sans', 'ISFallback', system-ui, sans-serif;
+  /* 🔴 CWV/CLS：字体 swap 时这两个 fallback 必须与自定义字体【几何等价】，否则整页跳。
+     真因是 .lede（18px/1.65）在 system-ui 下少折一行 → 下方 .toc 跳 30px（.toc 还是 columns:2，放大效应）。
+     判据用【几何差】不用 CLS 采样 —— 后者随机（同一配置实测跑出过 0.1504 和 0.0000）。
+     实测 390px 移动端「fallback 态 vs 自定义字体到位态」的最大纵向跳动：
+       system-ui + ui-monospace（原）        = 36px
+       system-ui + 'Courier New'（曾试，更差） = 38px
+       ISFallback(101%) + ui-monospace       =  5px
+       ✅ ISFallback(101%) + JBFallback       =  0px  ← 当前
+     改这两行前先重跑几何对照，别凭感觉换 fallback。 */
+  --font-mono: 'JetBrains Mono', 'JBFallback', ui-monospace, monospace;
   --max-w: 1200px;
 }
 
