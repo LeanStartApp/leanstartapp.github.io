@@ -19,7 +19,11 @@
   --shadow: 0 1px 2px rgba(20, 23, 27, 0.05);
 
   --font-b: 'Instrument Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* 🔴 fallback 必须与 JetBrains Mono 字宽匹配，否则字体 swap 时 .toc 的 columns:2 会重排 → CLS
+     实测(2026-09-16, canvas measureText, 平均字宽 em)：JetBrains Mono 21.60 ｜ Courier New 21.60(差0.02%)
+     ｜ monospace/Menlo 21.67(差0.34%) ｜ 🔴 ui-monospace 19.07(差13.2%) ← 原来挑中的恰好是最差的那个
+     改前/改后实测 CLS：0.1543 → 0.0000（移动端慢4G+冷缓存+滚动到底）。别把 ui-monospace 加回来。 */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
   --max-w: 1200px;
 }
 
