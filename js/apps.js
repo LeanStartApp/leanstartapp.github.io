@@ -95,6 +95,16 @@ const APPS = [
     featured: false,
   },
   {
+    name: "Decibel Meter+",
+    fn: "Sound meter",
+    group: "audio",
+    // 新上架，Google Play 尚无聚合评分——留空会渲染成 "new" 而不是假分数
+    icon: "https://play-lh.googleusercontent.com/efZvpdyME0JZKMsMk5Uo2WCcvKT4Lp3HY63wJbE9oV6A6jtCLhaYpm0ee0EUuk8-gy1s1JTFnGfKJOxYMkid6Q=s128-rw",
+    url: "https://play.google.com/store/apps/details?id=decibelmeter.plus",
+    desc: "Measure noise in dB in real time, calibrate to your phone, and export timestamped CSV logs.",
+    featured: false,
+  },
+  {
     name: "SAI+",
     fn: "APK installer",
     group: "tools",
