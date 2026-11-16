@@ -1,0 +1,27 @@
+.product-hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 72px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+.product-kicker { color: var(--accent-bright); font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }
+.product-app-name { margin-top: 24px; color: var(--muted); font-size: 16px; }
+.product-hero h1 { margin-top: 18px; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.06; letter-spacing: -.045em; }
+.product-lead { max-width: 540px; margin-top: 24px; color: var(--muted); font-size: 20px; line-height: 1.65; }
+.product-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 30px; }
+.product-note { color: var(--faint); font-size: 13px; margin-top: 18px; }
+.product-preview { margin: 0; max-width: 300px; justify-self: center; }
+.product-preview img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 14px; }
+.product-preview figcaption { margin-top: 14px; color: var(--muted); font-size: 12px; text-align: center; }
+.product-section { border-top: 1px solid var(--border); padding-top: 44px; padding-bottom: 50px; }
+.product-section h2 { font-size: clamp(26px, 3vw, 36px); margin-top: 14px; letter-spacing: -.025em; }
+.product-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 0; margin-top: 32px; }
+.product-steps li { padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+.product-step-number { font-family: var(--font-mono); font-size: 12px; color: var(--accent-bright); }
+.product-steps h3 { margin-top: 20px; font-size: 20px; }
+.product-steps p, .product-faq details p { color: var(--muted); font-size: 16px; line-height: 1.75; margin-top: 12px; }
+.product-faq details { padding: 22px 0; border-bottom: 1px solid var(--border); max-width: 800px; }
+.product-faq summary { cursor: pointer; font-size: 18px; font-weight: 600; }
+.product-bottom-cta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
+@media (max-width: 760px) {
+  .product-hero { grid-template-columns: 1fr; gap: 38px; padding-top: 42px; }
+  .product-preview { width: min(100%, 280px); }
+  .product-steps { grid-template-columns: 1fr; gap: 14px; }
+  .product-lead { font-size: 18px; }
+  .nav-links .sys-link[href="#how-it-works"] { display: none; }
+}
