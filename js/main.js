@@ -51,7 +51,7 @@
 
   /* ---- hero app drawer (all apps + a placeholder) ---- */
   var drawer = document.getElementById("appDrawer");
-  if (drawer && typeof APPS !== "undefined") {
+  if (drawer && !drawer.children.length && typeof APPS !== "undefined") {
     drawer.innerHTML = APPS.map(function (a) {
       return '<a class="drawer-item" data-app-slug="' + esc(a.slug) + '" href="' + esc(a.url) + '" target="_blank" rel="noopener" title="' + esc(a.name) + '">' +
         '<span class="ico"><img src="' + esc(a.icon) + '" alt="' + esc(a.name) + '" loading="lazy"></span>' +
@@ -61,7 +61,7 @@
 
   /* ---- app index, grouped as a process table ---- */
   var host = document.getElementById("appGroups");
-  if (host && typeof APPS !== "undefined" && typeof APP_GROUPS !== "undefined") {
+  if (host && !host.children.length && typeof APPS !== "undefined" && typeof APP_GROUPS !== "undefined") {
     var n = 0;
     host.innerHTML = APP_GROUPS.map(function (g) {
       var list = APPS.filter(function (a) { return a.group === g.id; });

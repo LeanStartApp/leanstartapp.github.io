@@ -60,8 +60,11 @@
       page_location: locationUrl.origin + locationUrl.pathname,
       page_referrer: externalHost(document.referrer) ? new URL(document.referrer).origin : ""
     }, diagnostic ? { debug_mode: true } : {}));
-    window.gtag("event", "page_view", Object.assign({
+    // Keep attributed page entries distinct from GA4's automatic page_view.
+    window.gtag("event", "website_entry", Object.assign({
       send_to: config.measurementId,
+      page_location: locationUrl.origin + locationUrl.pathname,
+      page_referrer: externalHost(document.referrer) ? new URL(document.referrer).origin : "",
       entry_source: entry.source,
       entry_medium: entry.medium,
       entry_path: entry.path,
@@ -114,6 +117,8 @@
     var payload = {
       target_app: label(anchor.dataset.appSlug) || "unknown",
       page_path: locationUrl.pathname.slice(0, 100),
+      page_location: locationUrl.origin + locationUrl.pathname,
+      page_referrer: externalHost(document.referrer) ? new URL(document.referrer).origin : "",
       button_position: campaign,
       entry_source: entry.source,
       entry_medium: entry.medium,

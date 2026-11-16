@@ -157,6 +157,26 @@ const APPS = [
     "desc": "One-tap gloo wall drops for Free Fire, with fully customizable buttons.",
     "featured": true,
     "slug": "fast-gloo-wall"
+  },
+  {
+    "name": "WiFi Analyzer+",
+    "fn": "Wi-Fi channels",
+    "group": "tools",
+    "icon": "images/apps/wifi-analyzer.png",
+    "url": "https://play.google.com/store/apps/details?id=wifianalyzer.plus",
+    "desc": "View Wi-Fi channel occupancy and recommendations. Available details depend on Android version and permissions.",
+    "featured": false,
+    "slug": "wifi-analyzer"
+  },
+  {
+    "name": "Timestamp Camera+",
+    "fn": "GPS photo watermark",
+    "group": "fun",
+    "icon": "https://play-lh.googleusercontent.com/QO9LkfIUek9K6m4bGLow3Pv5h7-QqhY1ygpeqG6uUN2JJkkMAGQZSOkB-6CEt6w58cIHMEiErhZU3JFQ9FkjPg=s128-rw",
+    "url": "https://play.google.com/store/apps/details?id=timestampcamera.gpswatermark.plus",
+    "desc": "Capture photos with date, time, GPS details and custom text. Location permission is required for GPS features.",
+    "featured": false,
+    "slug": "timestamp-camera"
   }
 ];
 

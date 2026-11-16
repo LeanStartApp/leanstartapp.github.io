@@ -192,24 +192,16 @@ header.nav nav {
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
-.drawer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-top: 18px; }
-.drawer-item { display: flex; flex-direction: column; align-items: center; gap: 8px; transition: transform 0.16s ease; }
+.hero-grid > * { min-width: 0; }
+.drawer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding-top: 18px; }
+.drawer-item { display: flex; min-width: 0; flex-direction: column; align-items: center; gap: 8px; transition: transform 0.16s ease; }
 .drawer-item:hover { transform: translateY(-3px); }
 .drawer-item .ico { width: 100%; aspect-ratio: 1; max-width: 62px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
 .drawer-item .ico img { width: 100%; height: 100%; object-fit: cover; }
-.drawer-item .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 76px; }
+.drawer-item .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; max-width: 76px; }
 .drawer-plus { display: grid; place-items: center; width: 62px; aspect-ratio: 1; border: 1px dashed var(--border); border-radius: 16px; font-family: var(--font-mono); font-size: 16px; color: var(--faint); align-self: center; justify-self: center; }
 
-/* ---- space reserved for the two JS-rendered blocks (keeps CLS at 0) ----
-   #appDrawer and #appGroups are empty in index.html; js/main.js fills them
-   after the scripts land. Without a reservation the injected 398px (drawer,
-   above the fold) + 918px (app table) push the page down after first paint —
-   measured CLS 0.333 = "poor" in Cloudflare Web Analytics, 2026-07.
-   Heights measured on the live page at 340–1440px widths.
-   ⚠️ Re-measure these two numbers whenever the app count or row height
-   changes (see the note at the top of js/apps.js). */
-#appDrawer { min-height: 398px; }   /* 4 rows × 62px icon + label — constant at every width */
-#appGroups { min-height: 979px; }   /* 14 rows in 3 groups */
+/* Catalog HTML is present before first paint; no empty-block reservation. */
 
 /* ---- stats bar ---- */
 .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -326,7 +318,7 @@ footer.site .inner { padding-top: clamp(36px, 5vw, 52px); padding-bottom: clamp(
   .nav-links .hide-sm { display: none; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(2) { border-right: none; }
-  .drawer-grid { grid-template-columns: repeat(4, 1fr); }
+  .drawer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 620px) {
@@ -334,5 +326,4 @@ footer.site .inner { padding-top: clamp(36px, 5vw, 52px); padding-bottom: clamp(
   .reviews-grid { grid-template-columns: 1fr; }
   .proc-row { grid-template-columns: 30px 36px 1fr auto; }
   .proc-desc, .proc-slug { display: none; }
-  #appGroups { min-height: 1567px; }  /* rows get taller here — see the reservation note above */
 }
