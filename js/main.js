@@ -53,7 +53,7 @@
   var drawer = document.getElementById("appDrawer");
   if (drawer && typeof APPS !== "undefined") {
     drawer.innerHTML = APPS.map(function (a) {
-      return '<a class="drawer-item" href="' + esc(a.url) + '" target="_blank" rel="noopener" title="' + esc(a.name) + '">' +
+      return '<a class="drawer-item" data-app-slug="' + esc(a.slug) + '" href="' + esc(a.url) + '" target="_blank" rel="noopener" title="' + esc(a.name) + '">' +
         '<span class="ico"><img src="' + esc(a.icon) + '" alt="' + esc(a.name) + '" loading="lazy"></span>' +
         '<span class="lbl">' + esc(a.name) + '</span></a>';
     }).join("") + '<span class="drawer-plus">+</span>';
@@ -69,7 +69,7 @@
       var rows = list.map(function (a) {
         n += 1;
         var no = String(n).padStart(2, "0");
-        return '<a class="proc-row" href="' + esc(a.url) + '" target="_blank" rel="noopener">' +
+        return '<a class="proc-row" data-app-slug="' + esc(a.slug) + '" href="' + esc(a.url) + '" target="_blank" rel="noopener">' +
           '<span class="proc-no">' + no + '</span>' +
           '<span class="proc-ico"><img src="' + esc(a.icon) + '" alt="' + esc(a.name) + '" loading="lazy"></span>' +
           '<span><span class="proc-name">' + esc(a.name) + '</span>' +
